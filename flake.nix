@@ -14,9 +14,6 @@
         src = ./.;
         format = "other";
 
-        propagatedBuildInputs = with pkgs.python3Packages; [
-        ];
-
         installPhase = ''
           mkdir -p $out/bin
           cp pls.py $out/bin/pls
@@ -31,9 +28,9 @@
           pip install -r requirements.txt
         '';
 
-        buildInputs = with pkgs.python3Packages; [
-          python
-        ];
+        buildInputs = with pkgs.python3Packages; [ python ];
+
+        packages = with pkgs; [ cron ];
       };
     };
 }

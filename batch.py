@@ -22,3 +22,7 @@ message_batch = client.messages.batches.create(
 )
 
 print(message_batch)
+
+f = open("batches.txt", "a")
+f.write(message_batch.id + "\n")
+f.close()
